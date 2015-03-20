@@ -6,10 +6,11 @@ pkgdesc="" #TODO
 arch=() #TODO
 url="" #TODO
 license=('') #TODO
-depends=('ffmpeg' 'swig'
+depends=('ffmpeg'
 	 'tesseract' 'tesseract-data-eng' 'atlas-lapack' 'opencv'
 ) #swig to makedepends? tesseract libs? leptonica ommited as being dep of tesseract
-makedepends=('git' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs') #only boost-libs and git? else in base/ base-devel?
+makedepends=('git' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs' 'swig')
+#only boost-libs and git? else in base/ base-devel?
 optdepends=(':	'
 	    ':'	     )
 source=('sirius::git+https://github.com/jhauswald/sirius#branch=master')
