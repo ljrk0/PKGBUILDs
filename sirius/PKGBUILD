@@ -1,6 +1,6 @@
-pkgname=sirius-git
+pkgname=sirius
 _gitname=sirius
-pkgver=1.0.r99.gc53543b
+pkgver=1.0
 pkgrel=1
 pkgdesc="A speech and vision based intelligent personal assistant"
 arch=(x86_64) #TODO
@@ -16,14 +16,14 @@ makedepends=('wget' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-
 source=('https://github.com/jhauswald/sirius/archive/sirius-application-1.0.tar.gz')
 md5sums=("SKIP")
 
-pkgver() {
-	cd "$pkgname"
-	git describe --long | sed 's/^sirius-application-//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}
+#pkgver() {
+#	cd "${srcdir}"
+#	git describe --long | sed 's/^sirius-application-//;s/\([^-]*-g\)/r\1/;s/-/./g'
+#}
 
 prepare() {
 	# deps handled
-	cd "${srcdr}/${_gitname}/{sirius-applicaton}"
+	cd "${srcdir}/${_gitname}/sirius-application"
 	./get-kaldi.sh
 	# opencv handled
 	# compile in build
