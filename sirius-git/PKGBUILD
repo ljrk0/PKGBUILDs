@@ -33,3 +33,7 @@ build() {
 	cd "${srcdir}/${_gitname}"
 	./compile-sirius-servers.sh
 }
+
+package() {
+	echo "EMPTY"
+}
