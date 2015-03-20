@@ -1,0 +1,33 @@
+pkgname=sirius-git
+_gitname=sirius
+pkgver= #TODO
+pkgrel=1
+pkgdesc="" #TODO
+arch=() #TODO
+url="" #TODO
+license=('') #TODO
+depends=('ffmpeg' 'swig'
+	 'tesseract' 'tesseract-data-eng' 'atlas-lapack' 'opencv'
+) #swig to makedepends? tesseract libs? leptonica ommited as being dep of tesseract
+makedepends=('git' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs') #only boost-libs and git? else in base/ base-devel?
+optdepends=(':	'
+	    ':'	     )
+source=('sirius::git+https://github.com/jhauswald/sirius#branch=master')
+md5sums=("SKIP")
+
+pkgver() {
+	cd "$pkgname"
+	git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+	cd "${srcdr}/${_gitname}/{sirius-application}"
+	./get-opencv.sh
+}
+
+build()= {
+	cd "${srcdir}/${_gitname}"
+	./compile-sirius-servers.sh
+
+}
+
