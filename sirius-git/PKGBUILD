@@ -9,7 +9,7 @@ license=('BSD')
 depends=('ffmpeg'
 	 'tesseract' 'tesseract-data-eng' 'atlas-lapack'
 ) # tesseract libs only? leptonica ommited as being dep of tesseract; jdk7?
-makedepends=('git' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs' 'swig' 'opencv' 'openfst')
+makedepends=('git' 'wget' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs' 'swig' 'opencv' 'openfst')
 #only boost-libs and git? else in base/ base-devel?
 # optdepends=(':	'
 #	    ':'	     )
