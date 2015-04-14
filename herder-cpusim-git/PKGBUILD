@@ -14,10 +14,8 @@ makedepends=('git' 'lazarus' 'qt4pas' 'lazarus-qt')
 
 optdepends=(
 	'qtcurve-qt4: Confirmed-working theme')
-source=('CPUSim::git+https://github.com/HERDER2014/CPUSim#branch=master'
-	'cpusim.desktop')
-md5sums=("SKIP"
-	 "SKIP")
+source=('CPUSim::git+https://github.com/HERDER2014/CPUSim#branch=master')
+md5sums=("SKIP")
 
 pkgver() {
 	cd "${srcdir}/${_gitname}/src"
@@ -37,6 +35,6 @@ package() {
 	install -D -m 755 bin/cpusim ${pkgdir}/usr/bin/cpusim
 	install -d -m 755 ${pkgdir}/usr/share/cpusim/Examples
 	install -D -m 644 Examples/* ${pkgdir}/usr/share/cpusim/Examples
-	install -D -m 644 ${srcdir}/cpusim.desktop ${pkgdir}/usr/share/applications/cpusim.desktop
+	install -D -m 644 cpusim.desktop ${pkgdir}/usr/share/applications/cpusim.desktop
 	install -D -m 644 src/cpusim.png ${pkgdir}/usr/share/pixmaps/cpusim.png
 }
