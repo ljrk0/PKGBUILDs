@@ -7,7 +7,7 @@ arch=(x86_64) #TODO
 url="http://sirius.clarity-lab.org/"
 license=('BSD')
 depends=('ffmpeg'
-	 'tesseract' 'tesseract-data-eng' 'atlas-lapack'
+         'tesseract' 'tesseract-data-eng' 'atlas-lapack'
 ) # tesseract libs only? leptonica ommited as being dep of tesseract; jdk7?
 makedepends=('wget' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs' 'swig' 'opencv' 'openfst')
 #only boost-libs and git? else in base/ base-devel?
@@ -16,24 +16,19 @@ makedepends=('wget' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-
 source=('https://github.com/jhauswald/sirius/archive/sirius-application-1.0.tar.gz')
 md5sums=("SKIP")
 
-#pkgver() {
-#	cd "${srcdir}"
-#	git describe --long | sed 's/^sirius-application-//;s/\([^-]*-g\)/r\1/;s/-/./g'
-#}
-
 prepare() {
-	# deps handled
-	cd "${srcdir}/${_gitname}/sirius-application"
-	./get-kaldi.sh
-	# opencv handled
-	# compile in build
+  # deps handled
+  cd "${srcdir}/${_gitname}/sirius-application"
+  ./get-kaldi.sh
+  # opencv handled
+  # compile in build
 }
 
 build() {
-	cd "${srcdir}/${_gitname}"
-	./compile-sirius-servers.sh
+  cd "${srcdir}/${_gitname}"
+  ./compile-sirius-servers.sh
 }
 
 package() {
-	echo "EMPTY"
+  echo "EMPTY"
 }

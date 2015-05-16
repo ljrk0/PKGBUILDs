@@ -29,7 +29,7 @@ package() {
   mkdir -p "${pkgdir}/usr/bin"
   mkdir -p "${pkgdir}/usr/share/applications"
   mkdir -p "${pkgdir}/usr/share/pixmaps"
-  
+
   cp -rf snowshoe "${pkgdir}/usr/bin/"
   cp src/icons/snowshoe80.png "${pkgdir}/usr/share/pixmaps/"
   cp src/desktop/snowshoe.desktop "${pkgdir}/usr/share/applications"

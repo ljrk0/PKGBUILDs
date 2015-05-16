@@ -6,7 +6,7 @@ pkgdesc="A speech and vision based intelligent personal assistant"
 arch=(x86_64) #TODO
 url="http://sirius.clarity-lab.org/"
 license=('BSD')
-depends=('ffmpeg' 
+depends=('ffmpeg'
 ) # tesseract libs only? leptonica ommited as being dep of tesseract; jdk7?
 makedepends=('git' 'wget' 'apache-ant' 'automake' 'autoconf' 'libtool' 'bison' 'boost-libs' 'swig' 'opencv' 'openfst')
 #only boost-libs and git? else in base/ base-devel?
