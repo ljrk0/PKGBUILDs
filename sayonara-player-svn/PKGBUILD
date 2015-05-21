@@ -6,7 +6,7 @@ pkgdesc="Sayonara is a small, clear and fast audio player for Linux written in C
 arch=('any')
 url="https://sayonara-player.com/"
 license=('GPL3')
-depends=('qt4' 'curl' 'taglib' 'gst-plugins-base' 'gst-plugins-good' 'gst-plugins-bad' 'libnotify')
+depends=('qt4' 'curl' 'taglib' 'gst-plugins-base' 'gst-plugins-good' 'libnotify')
 optdepends=('lame: mp3 converter, broadcasting'
             'gst-plugins-ugly: mp3 converter, broadcasting')
 makedepends=('subversion' 'cmake')
