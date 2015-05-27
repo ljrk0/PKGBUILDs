@@ -2,7 +2,7 @@
 pkgname=herder-cpusim-git
 url="https://github.com/HERDER2014/CPUSim"
 _gitname=CPUSim
-pkgver=v1.0.beta.1.r6.g03ac699
+pkgver=1.0.3.r2.g4bfc9b2
 pkgrel=1
 pkgdesc="Pseudo Assembly/CPU-Simulator for educational purposes - QT-Version"
 arch=(x86_64) #TODO
@@ -26,8 +26,14 @@ pkgver() {
 #}
 
 build() {
-	cd "${srcdir}/${_gitname}/src"
-	lazbuild --build-mode=release --widgetset=qt --build-all --recursive cpusim.lpi
+	cd /home/$(whoami)
+	if [  -d ".lazarus" ]; then
+		msg "ABORTING: Directory ~/.lazarus does not exist. Please run lazarus at least once to create it"
+		exit
+	else
+		cd "${srcdir}/${_gitname}/src"
+		lazbuild --build-mode=release --widgetset=qt --build-all --recursive cpusim.lpi
+	fi
 }
 
 package() {
