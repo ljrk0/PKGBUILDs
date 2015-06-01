@@ -24,7 +24,10 @@ pkgver() {
 }
 
 build() {
-  cd "$SRCDEST/$pkgname"
+#  msg "$PWD"
+#  msg "$pkgname"
+#  msg "$ls"
+  cd "$pkgname"
   cmake . -DCMAKE_INSTALL_PREFIX=/usr
   make
 }
